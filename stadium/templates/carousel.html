@@ -1,0 +1,344 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+	<div class="banner-silder" id="home">
+		<div id="JiSlider" class="jislider">
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top">
+
+							<div class="container">
+								<div class="agileits-banner-info">
+									<h3>Cricket GentleMan's Game</h3>
+									 <p>We love the game</p>
+									
+								</div>	
+							</div>
+						</div>
+				</li>
+				<li>
+						<div class="w3layouts-banner-top w3layouts-banner-top1">
+						<div class="container">
+								<div class="agileits-banner-info">
+									<h3>Hockey</h3>
+									 <p>we enjoy the game </p>
+									
+								</div>	
+							</div>
+						</div>
+				</li>
+				<li>
+						<div class="w3layouts-banner-top w3layouts-banner-top2">
+							<div class="container">
+								<div class="agileits-banner-info">
+									<h3>soccer Mindful game</h3>
+									 <p>we cheer the game</p>
+									
+								</div>	
+								
+							</div>
+						</div>
+					</li>
+
+			</ul>
+		</div>
+		{% comment %} <!-- banner-bottom -->
+	<div class="banner-bottom">
+		<div class="container">
+			<div class="banner_bottom_agile_grids">
+				<div class="wthree_banner_bottom_right_grids">
+					<div class="col-md-3 banner_bottom_right_grid">
+						<div class="view view-tenth">
+							<div class="agile_text_box">
+								<i class="fa fa-eye" aria-hidden="true"></i>
+								<h3> Lorem ipsum</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adip.</p>
+							</div>
+							<div class="mask">
+								<img src="{% static 'images/a1.jpg' %}" class="img-responsive" alt="" />
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 banner_bottom_right_grid">
+						<div class="view view-tenth">
+							<div class="agile_text_box">
+								<i class="fa fa-building-o" aria-hidden="true"></i>
+								<h3> Dorem footb</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adip.</p>
+							</div>
+							<div class="mask">
+								<img src="{% static 'images/a2.jpg' %}" class="img-responsive" alt="" />
+							</div>
+						</div>
+					</div>
+				
+					<div class="col-md-3 banner_bottom_right_grid">
+						<div class="view view-tenth">
+							<div class="agile_text_box">
+								<i class="fa fa-eraser" aria-hidden="true"></i>
+								<h3>Forem check </h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adip.</p>
+							</div>
+							<div class="mask">
+								<img src="{% static 'images/a3.jpg' %}" class="img-responsive" alt="" />
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 banner_bottom_right_grid">
+						<div class="view view-tenth">
+							<div class="agile_text_box">
+								<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+								<h3>Jipsu game</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adip.</p>
+							</div>
+							<div class="mask">
+								<img src="{% static 'images/a4.jpg' %}" class="img-responsive" alt="" />
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!-- banner-bottom --> {% endcomment %}
+
+      </div>
+
+<!-- //banner -->
+	<!-- about -->
+
+<!-- stats -->
+	<div class="stats" id="stats">
+	    <div class="container"> 
+			<div class="inner_w3l_agile_grids">
+		<div class="col-md-3 w3layouts_stats_left w3_counter_grid">
+		   <i class="fa fa-list-alt" aria-hidden="true"></i>
+			<p class="counter">{{game_cat}}</p>
+			<h3>Total Game Category</h3>
+		</div>
+		<div class="col-md-3 w3layouts_stats_left w3_counter_grid1">
+		    <i class="fa fa-gamepad" aria-hidden="true"></i>
+			<p class="counter">{{game}}</p>
+			<h3>Total Game</h3>
+		</div>
+		<div class="col-md-3 w3layouts_stats_left w3_counter_grid2">
+		<i class="fa fa-trophy" aria-hidden="true"></i>
+			<p class="counter">{{book}}</p>
+			<h3>Total Booking</h3>
+		</div>
+		<div class="col-md-3 w3layouts_stats_left w3_counter_grid3">
+		<i class="fa fa-user" aria-hidden="true"></i>
+			<p class="counter">{{total_user}}</p>
+			<h3>Total User</h3>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+   </div>	
+</div>
+<!-- //stats -->
+<!-- team -->
+	<div class="team" id="team">
+		<div class="container">
+			<div class="w3-team-head">
+				<h3>Our Latest Game</h3>
+				</div>
+			<div class="agile_team_grids">
+				{% for i in game_data %}
+				<a href="/game_detail/{{i.id}}/">
+				<div class="col-md-3 agile_team_grid team-left-w3l-agile">
+					<div class="agile_team_grid_main">
+						<img src="{{i.image.url}}" alt=" " class="img-responsive" style= "width:250px;height:250px"/>
+						<div class="p-mask">
+							<ul class="social-icons">
+							 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+									<li> <a href="#"><i class="fa fa-twitter"></i></a>  </li>
+									
+									<li><a href="#"><i class="fa fa-dribbble"></i></a> </li>
+							</ul>
+						</div>
+					</div>
+					<div class="agile_team_grid1">
+						<a href="/game_detail/{{i.id}}/">
+							<h3>{{i.game_name}}</h3>
+							<p>{{i.description}}</p></a>
+					</div>
+				</div>
+				</a>
+				{% endfor %}
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+<!-- //team -->
+
+<!-- works -->
+	<div class="works" id="gallery">
+		<div class="container">
+			<div class="services-heading">
+				<h3>Our Gallery</h3>
+				<div class="border border2"> </div>
+			</div>
+			<div class="gallery-grids">
+				<div class="col-md-6 gallery-grids-left">
+					<div class="gallery-grid">
+						<a class="example-image-link" href="{% static 'images/w1.jpg' %}" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae cursus ligula">
+							<img src="{% static 'images/w1.jpg' %}" alt="" />
+						</a>
+					</div>
+					<div class="gallery-grids-left-sub">
+						<div class="col-md-6 gallery-grids-left-subl">
+							<div class="gallery-grid"><a class="example-image-link" href="{% static 'images/w2.jpg' %}" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae cursus ligula">
+									<img src="{% static 'images/w2.jpg' %}" alt="" />
+								</a>
+							</div>
+							<div class="gallery-grid gallery-grid-sub">
+								<a class="example-image-link" href="{% static 'images/w3.jpg' %}" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae cursus ligula">
+									<img src="{% static 'images/w3.jpg' %}" alt="" />
+								</a>
+							</div>
+						</div>
+						<div class="col-md-6 gallery-grids-left-subr">
+							<div class="gallery-grid">
+								<a class="example-image-link" href="{% static 'images/w4.jpg' %}" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae cursus ligula">
+									<img src="{% static 'images/w4.jpg' %}" alt="" />
+								</a>
+							</div>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="col-md-6 gallery-grids-left">
+					<div class="col-md-6 gallery-grids-right">
+						<div class="gallery-grid">
+							<a class="example-image-link" href="{% static 'images/w5.jpg' %}" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae cursus ligula">
+								<img src="{% static 'images/w5.jpg' %}" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6 gallery-grids-right">
+						<div class="gallery-grid">
+							<a class="example-image-link" href="{% static 'images/w6.jpg' %}" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae cursus ligula">
+								<img src="{% static 'images/w6.jpg' %}" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+					<div class="gallery-grids-right1">
+						<div class="gallery-grid">
+							<a class="example-image-link" href="{% static 'images/w7.jpg' %}" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae cursus ligula">
+								<img src="{% static 'images/w7.jpg' %}" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6 gallery-grids-right">
+						<div class="gallery-grid">
+							<a class="example-image-link" href="{% static 'images/w8.jpg' %}" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae cursus ligula">
+								<img src="{% static 'images/w8.jpg' %}" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6 gallery-grids-right">
+						<div class="gallery-grid">
+							<a class="example-image-link" href="{% static 'images/w9.jpg' %}" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae cursus ligula">
+								<img src="{% static 'images/w9.jpg' %}" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+				<script src="{% static 'js/lightbox-plus-jquery.min.js' %}"> </script>
+			</div>
+		</div>
+	</div>
+	<!-- //works -->
+
+<!-- agile_testimonials -->
+<div class="test" id="testimonials">
+	<div class="container">
+	<div class="col-md-3 test-left-agileinfo">
+	<h3 class="tittle-agileits-w3layouts">Feedback</h3> 
+	</div>
+		{% for i in feedback_data %}
+		<div class="col-md-9 test-gr">
+					<div class=" test-gri1">
+					 <div id="owl-demo2" class="owl-carousel">
+							<div class="agile">
+							   	<div class="test-grid">
+							   		<div class="col-md-8 test-grid1">
+										<p class="para-w3-agile">{{i.description}}</p>
+										<h4>{{i.user.first_name}}</h4>
+										<span>{{i.created}}</span>
+									</div>	
+									<div class="col-md-4 test-grid2">
+										<img src="{% static 'images/t1.jpg' %}" alt="" class="img-r">
+									</div>
+								</div>	
+								<div class="clearfix"></div>
+							</div>
+					</div>
+				</div>	
+		{% endfor %}
+		</div>
+	</div>
+</div>
+<!-- //agile_testimonials -->
+<!-- /live match -->
+<div class="banner-info">
+	<div class="dott">
+    <div class="wrapper agileinfo">
+	<h3>THE BIG MATCH WILL START</h3>
+        <div class="clock">
+            <div class="column w3l days">
+                <div class="timer w3" id="days"></div>
+                <div class="aits text">DAYS</div>
+            </div>
+            <div class="column w3">
+                <div class="timer w3layouts" id="hours"></div>
+                <div class="agileits text">HOURS</div>
+            </div>
+         
+            <div class="column wthree">
+                <div class="timer w3las" id="minutes"></div>
+                <div class="text aits">MINUTES</div>
+            </div>
+            
+            <div class="column siteliga">
+                <div class="timer stuoyal3w" id="seconds"></div>
+                <div class="text wthree">SECONDS</div>
+            </div>
+        </div>
+			<div class="w3-border-bottom">
+				<h3>ARE YOU READY!</h3>
+			</div>
+          
+        
+    </div>
+</div>
+</div>
+
+<!-- //live match -->
+<!-- contact -->
+
+<!-- //contact -->
+
+<!-- map -->
+<div class="map">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.7827619118593!2d77.46339231480526!3d23.250990984837856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c438fbf8a7929%3A0x5e347262325ca71!2sYCT%20Academy!5e0!3m2!1sen!2sin!4v1631464562882!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+		
+</div>
+
+
+
+<!-- /contact bottom -->
+
+</div><!-- End Box -->
+  
+</div><!-- End Main Container -->
+		</div>
+		<div class="clearfix"></div>
+	</div>
+{% endblock %}

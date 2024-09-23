@@ -1,0 +1,64 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+<div class="w3-agileits-about" id="about">
+		<div class="container">
+				<div class="w3-agileits-about-top">
+						<h3>WHY US</h3>
+						<p>This program was developed to computerize ticketing, seating capacity/crowd control, and manage information and facilities in the stadium. The software will reduce the workload of stadium operators and ticket sales officers </p>
+					<div class="clearfix"></div>
+				</div>
+				<div class="col-md-4 col-sm-4 w3-agileits-about-grid">
+					<i class="fa fa-font-awesome" aria-hidden="true"></i>
+					<h4>Standard Chunk</h4>
+					<p>This program was developed to computerize ticketing, seating capacity/crowd control, and manage information and facilities in the stadium. The software will reduce the workload of stadium operators and ticket sales officers </p>
+				</div>
+				<div class="col-md-4 col-sm-4 w3-agileits-about-grid">
+			
+					<i class="fa fa-globe" aria-hidden="true"></i>
+					<h4>Nullam Ultrices</h4>
+					<p>This program was developed to computerize ticketing, seating capacity/crowd control, and manage information and facilities in the stadium. The software will reduce the workload of stadium operators and ticket sales officers</p>
+				</div>
+				<div class="col-md-4 col-sm-4 w3-agileits-about-grid">
+					<i class="fa fa-trophy" aria-hidden="true"></i>
+					<h4>Donec vitae</h4>
+					<p>This program was developed to computerize ticketing, seating capacity/crowd control, and manage information and facilities in the stadium. The software will reduce the workload of stadium operators and ticket sales officers</p>
+				</div>
+				
+				
+				<div class="clearfix"></div>
+			</div>
+	   </div>
+<!-- //about -->
+
+<div class="test" id="testimonials">
+	<div class="container">
+	<div class="col-md-3 test-left-agileinfo">
+	<h3 class="tittle-agileits-w3layouts">Feedback</h3>
+	</div>
+		{% for i in feedback_data %}
+		<div class="col-md-9 test-gr">
+					<div class=" test-gri1">
+					 <div id="owl-demo2" class="owl-carousel">
+							<div class="agile">
+							   	<div class="test-grid">
+							   		<div class="col-md-8 test-grid1">
+										<p class="para-w3-agile">{{i.description}}</p>
+										<h4>{{i.user.first_name}}</h4>
+										<span>{{i.created}}</span>
+									</div>
+									<div class="col-md-4 test-grid2">
+										<img src="{% static 'images/t1.jpg' %}" alt="" class="img-r">
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+					</div>
+				</div>
+		{% endfor %}
+		</div>
+	</div>
+</div>
+
+{% endblock %}
